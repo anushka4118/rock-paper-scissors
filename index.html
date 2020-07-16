@@ -7,64 +7,21 @@
 </head>
 
 <body>
-    <script>
-
-        function computerPlay() {
-            compChoice = Math.floor(Math.random() * 3) + 1;
-            switch (compChoice) {
-                case 1:
-                    compChoice = 'rock';
-                    break;
-                case 2:
-                    compChoice = 'paper';
-                    break;
-                case 3:
-                    compChoice = 'scissors';
-                    break;
-            }
-            return compChoice;
-        }
-
-        function playerPlay() {
-            let playerChoice = prompt('Rock, Paper, or Scissors?');
-            playerChoice = playerChoice.toLowerCase();
-
-            while (playerChoice !== 'rock' && playerChoice !== 'paper' && playerChoice !== 'scissors') {
-                playerChoice = prompt('You must enter rock, paper, or scissors');
-                playerChoice = playerChoice.toLowerCase();
-            }
-            return playerChoice
-        }
-
-
-
-        function playRound(playerSelection, computerSelection) {
-            if (playerSelection === 'rock' && computerSelection === 'scissors') {
-                return "You win!"
-            } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-                return "You win!"
-            } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-                return "You win!"
-            } else if (playerSelection === computerSelection) {
-                return "It's a tie."
-            } else {
-                return "Sorry, you lose."
-            }
-        }
-
-        for (var i = 0; i < 5; i++) {
-            let computerSelection = computerPlay();
-            let playerSelection = playerPlay();
-
-            console.log(computerSelection);
-            console.log(playerSelection);
-            
-            let winner = playRound(playerSelection, computerSelection);
-
-            console.log(winner);
-        }
-
-    </script>
+    <div>
+        <h2>Rock, paper, or scissors?</h2>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+    <div class="results">
+        <p id="playerSelection"></p>
+        <p id="computerSelection"></p>
+        <p id="roundWinner"></p>
+        <p id="score"></p>
+        <p id="runningScore"></p>
+        <p id="gameWinner"></p>
+    </div>
+    <script src="main.js"></script>
 </body>
 
 </html>
